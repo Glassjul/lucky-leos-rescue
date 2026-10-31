@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+
+  <!-- Hero: title, tagline, button, and Leo -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to Lucky Leo's Rescue</h1>
+      <p class="tagline">See every dog available for adoption in one place. Filter by breed to find the dog that best fits your lifestyle.</p>
+      <a class="button" href="/dogs">Browse adoptable dogs</a>
+    </div>
+    <img class="hero-leo" src="/static/images/leo_hero.svg" alt="Cartoon dachshund holding a four-leaf clover">
+  </section>
+
+  <!-- Success stories: three cards -->
+  <section class="section">
+    <h2>Success stories</h2>
+    <div class="stories">
+
+      <div class="story">
+        <img src="/static/images/stories/biscuit.jpg" alt="Biscuit">
+        <div class="story-body">
+          <h3>Biscuit</h3>
+          <p class="breed">Beagle mix</p>
+          <p>Adopted by the Nguyen family in March 2026. He goes on a walk every day with their two kids.</p>
+        </div>
+      </div>
+
+      <div class="story">
+        <img src="/static/images/stories/luna.jpg" alt="Luna">
+        <div class="story-body">
+          <h3>Luna</h3>
+          <p class="breed">Labrador retriever</p>
+          <p>Adopted by Maria in June 2026 after six months at the rescue. She now spends her days at Maria's bakery.</p>
+        </div>
+      </div>
+
+      <div class="story">
+        <img src="/static/images/stories/pepper.jpg" alt="Pepper">
+        <div class="story-body">
+          <h3>Pepper</h3>
+          <p class="breed">German shepherd</p>
+          <p>Adopted by James and Sam in August 2026. She lives with their cat and has a backyard to explore.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About the rescue -->
+  <section class="section">
+    <div class="about">
+      <span class="about-icon">🍀</span>
+      <div>
+        <h2>About Lucky Leo's Rescue</h2>
+        <p>This rescue was inspired by my own rescue dog, Leo. He was returned multiple times before he found his furever home with me. Now he is living his best life, making him Lucky Leo.</p>
+        <p>Lucky Leo's Rescue is a nonprofit dog rescue. We take in dogs from local shelters, care for them in foster homes, and help them find permanent homes. Many of our dogs are purebred, so you can find the breed you want without going to a breeder.</p>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
