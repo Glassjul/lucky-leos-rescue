@@ -14,6 +14,35 @@
   </section>
 
   <section class="section">
+        <!-- Filters toolbar. Choosing a breed reloads the page as /dogs?breed=... -->
+    <form class="filter-bar" method="get" action="/dogs">
+      <span class="filter-label">Filters</span>
+
+      <!-- Breed pill: turns green when a breed is chosen -->
+      <div class="pill {% if selected_breed != '' %}active{% endif %}">
+        <label for="breed">Breed:</label>
+        <select id="breed" name="breed" onchange="this.form.submit()">
+          <option value="">All breeds</option>
+          {% for breed in breeds %}
+            <option value="{{ breed }}" {% if breed == selected_breed %}selected{% endif %}>{{ breed }}</option>
+          {% endfor %}
+        </select>
+        <span class="pill-arrow">▼</span>
+        {% if selected_breed != '' %}
+          <a class="pill-remove" href="/dogs" aria-label="Remove breed filter">✕</a>
+        {% endif %}
+      </div>
+
+      <!-- Clear all: a link when a filter is on, gray text when it is off -->
+      {% if selected_breed != '' %}
+        <a class="clear-all" href="/dogs">Clear all</a>
+      {% else %}
+        <span class="clear-all inactive">Clear all</span>
+      {% endif %}
+    </form>
+
+    <p class="filter-note">Filtering by breed hides dogs of other breeds, including mixed breeds that may also be a good fit.</p>
+    
     <!-- Dog cards: one card for each dog in the "dogs" list -->
     <div class="dog-grid">
       {% for dog in dogs %}

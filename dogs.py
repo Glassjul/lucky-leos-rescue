@@ -102,3 +102,21 @@ DOGS = [
         "photo_position": "50% 50%",
     },
 ]
+
+# The breeds shown in the Breed filter, in alphabetical order.
+# Poodle has no dogs right now, which is how adopters reach the
+# "No matches" view.
+BREEDS = [
+    "Beagle",
+    "Boxer",
+    "Chihuahua",
+    "Dachshund",
+    "German shepherd",
+    "Golden retriever",
+    "Labrador retriever",
+    "Labrador retriever mix",
+    "Pit bull terrier mix",
+    "Poodle",
+    "Shih Tzu",
+    "Siberian husky",
+]

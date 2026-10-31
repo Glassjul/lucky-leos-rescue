@@ -373,3 +373,104 @@ h2 {
   color: var(--muted);
   margin-top: 4px;
 }
+
+/* =========================================
+   Adoptable dogs page: filters toolbar
+   ========================================= */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.filter-label {
+  font-weight: 700;
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+/* The Breed pill when no breed is chosen */
+.pill {
+  position: relative;
+  height: 42px;
+  padding: 0 16px;
+  border: 1.5px solid #9BA79F;
+  border-radius: 999px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+}
+
+.pill label {
+  font-weight: 600;
+}
+
+/* The dropdown inside the pill. "appearance: none" hides the
+   browser's own arrow so we can use our own. */
+.pill select {
+  appearance: none;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  color: inherit;
+  padding: 0 18px 0 0;
+  cursor: pointer;
+  field-sizing: content;
+}
+
+.pill-arrow {
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: -16px;
+  pointer-events: none;
+}
+
+/* The Breed pill when a breed is chosen */
+.pill.active {
+  background: var(--green-light);
+  border-color: var(--green);
+  color: var(--green-dark);
+}
+
+.pill.active .pill-arrow {
+  color: var(--green-dark);
+}
+
+/* The X that removes the breed filter */
+.pill-remove {
+  margin-left: 8px;
+  padding-left: 10px;
+  border-left: 1.5px solid #9DBDA6;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green-dark);
+  text-decoration: none;
+}
+
+/* Clear all when a filter is on */
+.clear-all {
+  margin-left: auto;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--green-dark);
+  text-underline-offset: 3px;
+}
+
+/* Clear all when no filter is on */
+.clear-all.inactive {
+  color: #A5AFA8;
+}
+
+.filter-note {
+  margin: 10px 2px 24px;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.5;
+}
