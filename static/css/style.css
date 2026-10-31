@@ -474,3 +474,32 @@ h2 {
   color: var(--muted);
   line-height: 1.5;
 }
+
+/* =========================================
+   Adoptable dogs page: no matches
+   ========================================= */
+.no-matches {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 44px 40px 48px;
+  text-align: center;
+}
+
+.no-matches-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.no-matches h3 {
+  font-family: Lora, Georgia, serif;
+  font-size: 28px;
+  color: var(--green-dark);
+  margin: 0 0 10px;
+}
+
+.no-matches p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0;
+}

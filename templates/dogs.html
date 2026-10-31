@@ -14,7 +14,8 @@
   </section>
 
   <section class="section">
-        <!-- Filters toolbar. Choosing a breed reloads the page as /dogs?breed=... -->
+
+    <!-- Filters toolbar. Choosing a breed reloads the page as /dogs?breed=... -->
     <form class="filter-bar" method="get" action="/dogs">
       <span class="filter-label">Filters</span>
 
@@ -42,20 +43,33 @@
     </form>
 
     <p class="filter-note">Filtering by breed hides dogs of other breeds, including mixed breeds that may also be a good fit.</p>
-    
-    <!-- Dog cards: one card for each dog in the "dogs" list -->
-    <div class="dog-grid">
-      {% for dog in dogs %}
-        <div class="dog-card">
-          <img src="/static/images/dogs/{{ dog.photo }}" alt="{{ dog.name }}" style="object-position: {{ dog.photo_position }};">
-          <div class="dog-body">
-            <h3>{{ dog.name }}</h3>
-            <p class="dog-breed">{{ dog.breed }}</p>
-            <p class="dog-meta">{{ dog.age }} · {{ dog.size }}</p>
+
+    {% if dogs|length > 0 %}
+
+      <!-- Dog cards: one card for each dog in the "dogs" list -->
+      <div class="dog-grid">
+        {% for dog in dogs %}
+          <div class="dog-card">
+            <img src="/static/images/dogs/{{ dog.photo }}" alt="{{ dog.name }}" style="object-position: {{ dog.photo_position }};">
+            <div class="dog-body">
+              <h3>{{ dog.name }}</h3>
+              <p class="dog-breed">{{ dog.breed }}</p>
+              <p class="dog-meta">{{ dog.age }} · {{ dog.size }}</p>
+            </div>
           </div>
-        </div>
-      {% endfor %}
-    </div>
+        {% endfor %}
+      </div>
+
+    {% else %}
+
+      <!-- No matches: shown when the chosen breed has no dogs -->
+      <div class="no-matches">
+        <div class="no-matches-icon">🍀</div>
+        <h3>No dogs match this breed right now</h3>
+        <p>Try another breed from the Breed filter, or select "Clear all" to browse all dogs.</p>
+      </div>
+
+    {% endif %}
   </section>
 
 {% endblock %}
