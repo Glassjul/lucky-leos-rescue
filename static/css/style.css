@@ -266,3 +266,110 @@ h2 {
   font-weight: 600;
   text-decoration: none;
 }
+
+/* =========================================
+   Adoptable dogs page: banner
+   ========================================= */
+.banner {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  padding: 56px 56px 90px;
+  background:
+    radial-gradient(circle at 78% 55%, rgba(242, 193, 78, 0.30), transparent 42%),
+    linear-gradient(120deg, #2E6B45 0%, #3F8559 55%, #6FA77B 100%);
+}
+
+.banner::after {
+  /* The darker grass curve along the bottom of the banner */
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  background: #2A5E3E;
+  opacity: 0.55;
+  border-top-left-radius: 50% 50px;
+  border-top-right-radius: 50% 50px;
+}
+
+.banner-text {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  color: #fff;
+}
+
+.banner h1 {
+  font-size: 44px;
+  margin: 0 0 14px;
+}
+
+.banner p {
+  font-size: 18px;
+  line-height: 1.55;
+  margin: 0;
+  color: #F1F6F2;
+  text-wrap: pretty;
+}
+
+/* The email link in the intro */
+.banner p a {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.banner-leo {
+  position: absolute;
+  right: 90px;
+  bottom: 70px;
+  width: 520px;
+  z-index: 1;
+}
+
+/* =========================================
+   Adoptable dogs page: dog cards
+   ========================================= */
+.dog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.dog-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.dog-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.dog-body {
+  padding: 16px 20px 20px;
+}
+
+.dog-body h3 {
+  margin: 0 0 4px;
+  font-size: 21px;
+}
+
+.dog-body p {
+  margin: 0;
+}
+
+.dog-breed {
+  font-size: 16px;
+}
+
+.dog-meta {
+  font-size: 15px;
+  color: var(--muted);
+  margin-top: 4px;
+}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Adoptable Dogs{% endblock %}
+
+{% block content %}
+
+  <!-- Banner: title, intro, and running Leo -->
+  <section class="banner">
+    <div class="banner-text">
+      <h1>Adoptable Dogs</h1>
+      <p>Welcome to our adoptable dogs page! Every dog listed here is ready for their furever home. Not sure you're ready to adopt? Email us at <a href="mailto:adopt@luckyleosrescue.org">adopt@luckyleosrescue.org</a> to ask about fostering. Start by browsing every dog, then filter by breed to narrow the list. Clear your filters anytime to see all dogs again.</p>
+    </div>
+    <img class="banner-leo" src="/static/images/leo_run.svg" alt="Cartoon dachshund running with a four-leaf clover">
+  </section>
+
+  <section class="section">
+    <!-- Dog cards: one card for each dog in the "dogs" list -->
+    <div class="dog-grid">
+      {% for dog in dogs %}
+        <div class="dog-card">
+          <img src="/static/images/dogs/{{ dog.photo }}" alt="{{ dog.name }}" style="object-position: {{ dog.photo_position }};">
+          <div class="dog-body">
+            <h3>{{ dog.name }}</h3>
+            <p class="dog-breed">{{ dog.breed }}</p>
+            <p class="dog-meta">{{ dog.age }} · {{ dog.size }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+{% endblock %}
